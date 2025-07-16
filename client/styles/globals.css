@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom fonts */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap");
+
+html {
+    scroll-behavior: smooth;
+    font-family: "Inter", sans-serif;
+}
+
+body {
+    @apply bg-white text-gray-900 transition-colors duration-300 dark:bg-gray-900 dark:text-white;
+}
+
+a {
+    @apply text-blue-600 dark:text-blue-400 hover:underline;
+}

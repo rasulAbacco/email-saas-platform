@@ -1,0 +1,15 @@
+:root {
+    --primary: #6366f1;
+    --secondary: #06b6d4;
+    --danger: #ef4444;
+    --success: #22c55e;
+    --warning: #f59e0b;
+    --muted: #9ca3af;
+
+    --gradient-light: linear-gradient(90deg, #cbd5e1, #f1f5f9);
+    --gradient-dark: linear-gradient(90deg, #1e293b, #334155);
+}
+
+.dark {
+    --gradient-light: linear-gradient(90deg, #1f2937, #374151);
+}
