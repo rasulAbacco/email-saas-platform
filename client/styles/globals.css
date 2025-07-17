@@ -10,10 +10,23 @@ html {
     font-family: "Inter", sans-serif;
 }
 
-body {
+/* body {
     @apply bg-white text-gray-900 transition-colors duration-300 dark:bg-gray-900 dark:text-white;
 }
 
 a {
     @apply text-blue-600 dark:text-blue-400 hover:underline;
+} */
+
+
+/* styles/globals.css */
+body.light-mode {
+    background: linear-gradient(135deg, #ffffff, #f4f4ff);
+    color: #000;
 }
+
+body.dark-mode {
+    background: linear-gradient(135deg, #0F044C, #000000);
+    color: #fff;
+}
+

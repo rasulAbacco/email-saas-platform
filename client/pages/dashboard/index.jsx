@@ -1,21 +1,17 @@
-// client/pages/dashboard/index.jsx
-
 import Head from 'next/head';
-import { useEffect } from 'react';
-import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
+import { useEffect, useState } from 'react';
+import {
+    LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer
+} from 'recharts';
 import DashboardLayout from '../../components/DashboardLayout';
-
-const data = [
-    { name: 'Mon', openRate: 34, clickRate: 22 },
-    { name: 'Tue', openRate: 45, clickRate: 28 },
-    { name: 'Wed', openRate: 52, clickRate: 33 },
-    { name: 'Thu', openRate: 48, clickRate: 25 },
-    { name: 'Fri', openRate: 58, clickRate: 40 },
-    { name: 'Sat', openRate: 40, clickRate: 20 },
-    { name: 'Sun', openRate: 30, clickRate: 15 },
-];
+import { getDashboardMetrics, getPerformanceData, getRecentCampaigns } from '@/services/dashboardService';
+import axios from 'axios';
 
 function DashboardPage() {
+    const [metrics, setMetrics] = useState(null);
+    const [performanceData, setPerformanceData] = useState([]);
+    const [recentCampaigns, setRecentCampaigns] = useState([]);
+
     useEffect(() => {
         const theme = localStorage.getItem('theme');
         if (theme === 'dark') {
@@ -23,6 +19,35 @@ function DashboardPage() {
         } else {
             document.documentElement.classList.remove('dark');
         }
+
+        const token = localStorage.getItem('token');
+
+        const fetchDashboardData = async () => {
+            try {
+                const [metricsRes, performanceRes, campaignsRes] = await Promise.all([
+                    axios.get('http://localhost:5000/api/auth/stats/metrics', {
+                        headers: { Authorization: `Bearer ${token}` },
+                        withCredentials: true,
+                    }),
+                    axios.get('http://localhost:5000/api/auth/stats/performance', {
+                        headers: { Authorization: `Bearer ${token}` },
+                        withCredentials: true,
+                    }),
+                    axios.get('http://localhost:5000/api/campaigns/recent', {
+                        headers: { Authorization: `Bearer ${token}` },
+                        withCredentials: true,
+                    }),
+                ]);
+
+                setMetrics(metricsRes.data);
+                setPerformanceData(performanceRes.data);
+                setRecentCampaigns(campaignsRes.data);
+            } catch (err) {
+                console.error('Dashboard data fetch failed', err);
+            }
+        };
+
+        fetchDashboardData();
     }, []);
 
     return (
@@ -34,10 +59,10 @@ function DashboardPage() {
 
                 {/* Metrics */}
                 <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-10">
-                    <MetricCard title="Emails Sent" value="12,300" />
-                    <MetricCard title="Open Rate" value="47%" />
-                    <MetricCard title="Click Rate" value="22%" />
-                    <MetricCard title="Revenue" value="$3,200" />
+                    <MetricCard title="Emails Sent" value={metrics?.emailsSent || 0} />
+                    <MetricCard title="Open Rate" value={`${metrics?.openRate || 0}%`} />
+                    <MetricCard title="Click Rate" value={`${metrics?.clickRate || 0}%`} />
+                    <MetricCard title="Revenue" value={`$${metrics?.revenue || 0}`} />
                 </div>
 
                 {/* Charts */}
@@ -45,9 +70,9 @@ function DashboardPage() {
                     <h2 className="text-xl font-semibold mb-4">Weekly Performance</h2>
                     <div className="w-full h-64">
                         <ResponsiveContainer width="100%" height="100%">
-                            <LineChart data={data}>
+                            <LineChart data={performanceData}>
                                 <CartesianGrid strokeDasharray="3 3" />
-                                <XAxis dataKey="name" />
+                                <XAxis dataKey="date" />
                                 <YAxis />
                                 <Tooltip />
                                 <Line type="monotone" dataKey="openRate" stroke="#3b82f6" strokeWidth={2} />
@@ -72,11 +97,7 @@ function DashboardPage() {
                                 </tr>
                             </thead>
                             <tbody>
-                                {[
-                                    { name: 'Summer Blast', status: 'Sent', openRate: '52%', clickRate: '31%', revenue: '$720' },
-                                    { name: 'Product Launch', status: 'Draft', openRate: '-', clickRate: '-', revenue: '-' },
-                                    { name: 'Weekly Digest', status: 'Sent', openRate: '48%', clickRate: '22%', revenue: '$480' },
-                                ].map((c, i) => (
+                                {recentCampaigns.map((c, i) => (
                                     <tr key={i} className="border-b dark:border-gray-700">
                                         <td className="px-4 py-3">{c.name}</td>
                                         <td className="px-4 py-3">{c.status}</td>
@@ -94,7 +115,6 @@ function DashboardPage() {
     );
 }
 
-// Attach the layout
 DashboardPage.getLayout = function getLayout(page) {
     return <DashboardLayout>{page}</DashboardLayout>;
 };

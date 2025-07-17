@@ -1,48 +1,70 @@
-// client/pages/index.jsx
-
-import { useEffect, useState } from 'react';
+import { useState, useEffect } from 'react';
+import Link from 'next/link';
 import Head from 'next/head';
 import { motion } from 'framer-motion';
-import Link from 'next/link';
+import styles from '../styles/navigation.module.css';
+import { FiSun, FiMoon } from 'react-icons/fi'; // Light/Dark icons
+import { FaRocket, FaTags, FaInfoCircle, FaSignInAlt, FaUserPlus } from 'react-icons/fa';
 
-export default function Home() {
-    const [isDark, setIsDark] = useState(false);
+export default function HomePage() {
+    const [theme, setTheme] = useState('light');
+    const isDark = theme === 'dark';
 
     useEffect(() => {
-        const stored = localStorage.getItem('theme');
-        if (stored === 'dark') setIsDark(true);
+        const saved = localStorage.getItem('theme') || 'light';
+        setTheme(saved);
+        document.documentElement.classList.toggle('dark', saved === 'dark');
     }, []);
 
     const toggleTheme = () => {
-        setIsDark(!isDark);
-        localStorage.setItem('theme', !isDark ? 'dark' : 'light');
+        const newTheme = isDark ? 'light' : 'dark';
+        setTheme(newTheme);
+        localStorage.setItem('theme', newTheme);
+        document.documentElement.classList.toggle('dark', newTheme === 'dark');
     };
 
     return (
-        <div className={isDark ? 'dark bg-gray-900 text-white' : 'bg-white text-gray-900'}>
+        <div className={`${styles.navigationContainer} ${isDark ? 'dark bg-gray-900 text-white' : 'bg-white text-gray-900'}`}>
             <Head>
                 <title>EmailAI Pro - Modern Email & CRM Automation</title>
             </Head>
 
             {/* Top Navigation */}
-            <header className="flex justify-between items-center px-6 py-4 border-b dark:border-gray-700">
-                <h1 className="text-xl font-bold">📧 EmailAI Pro</h1>
-                <nav className="space-x-4 hidden md:block">
-                    <Link href="#features" className="hover:underline">Features</Link>
-                    <Link href="#pricing" className="hover:underline">Pricing</Link>
-                    <Link href="#about" className="hover:underline">About</Link>
-                    <Link href="/login" className="hover:underline">Login</Link>
-                    <Link href="/signup" className="bg-blue-600 text-white px-3 py-1 rounded hover:bg-blue-700">Get Started</Link>
-                </nav>
-                <button onClick={toggleTheme} className="ml-4 text-sm">
-                    {isDark ? '🌞 Light' : '🌙 Dark'}
-                </button>
-            </header>
+            <header className={`flex justify-between items-center px-6 py-4 ${styles.navigation}`}>
+            <h1 className="text-xl font-bold text-[#9400FF] dark:text-white">📧 EmailAI Pro</h1>
+            <nav className="space-x-6 hidden md:flex items-center">
+                <Link href="#features" className={styles.navLink}>
+                    <FaRocket className="inline-block mr-1" /> Features
+                </Link>
+                <Link href="#pricing" className={styles.navLink}>
+                    <FaTags className="inline-block mr-1" /> Pricing
+                </Link>
+                <Link href="#about" className={styles.navLink}>
+                    <FaInfoCircle className="inline-block mr-1" /> About
+                </Link>
+                <Link href="/login" className={styles.navLink}>
+                    <FaSignInAlt className="inline-block mr-1" /> Login
+                </Link>
+                <Link
+                    href="/signup"
+                    className="bg-[#7F27FF] text-white px-2 py-1 rounded hover:bg-[#9400FF] transition flex items-center gap-2"
+                >
+                    <FaUserPlus /> Get Started
+                </Link>
+            </nav>
+            <button
+                onClick={toggleTheme}
+                className="ml-4 text-black text-xl hover:scale-105 transition-transform dark:text-white"
+                title="Toggle Theme"
+            >
+                {theme === 'dark' ? <FiSun /> : <FiMoon />}
+            </button>
+        </header>
 
             {/* Hero Section */}
-            <main className="flex flex-col md:flex-row items-center justify-between px-6 py-20 max-w-7xl mx-auto">
+            <main className="flex flex-col md:flex-row items-center justify-between px-6 py-36 max-w-7xl mx-auto">
                 <motion.div
-                    className="w-full md:w-1/2"
+                    className={`w-full md:w-1/2 ${styles.heroFadeIn}`}
                     initial={{ opacity: 0, x: -50 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.8 }}
@@ -53,15 +75,13 @@ export default function Home() {
                     <p className="text-lg mb-6">
                         Build high-converting campaigns, validate emails, manage contacts, and analyze performance — all in one powerful platform.
                     </p>
-                    <Link href="/signup" className="bg-blue-600 text-white px-6 py-3 rounded shadow hover:bg-blue-700">
+                    <Link href="/signup" className={`bg-blue-600 text-white px-6 py-3 rounded shadow hover:bg-blue-700 ${styles.ctaButton}`}>
                         Start for Free
                     </Link>
                 </motion.div>
 
-                {/* Placeholder for 3D model / animation */}
                 <div className="w-full md:w-1/2 mt-10 md:mt-0">
                     <div className="w-full h-64 bg-gradient-to-br from-blue-300 to-purple-400 rounded-2xl shadow-lg flex items-center justify-center">
-                        {/* Replace this with Lottie / Rive / Three.js animation */}
                         <p className="text-white text-xl font-semibold">3D Animation Here</p>
                     </div>
                 </div>
@@ -71,10 +91,10 @@ export default function Home() {
             <footer className="border-t py-6 mt-10 px-6 flex justify-between items-center text-sm dark:border-gray-700">
                 <p>© 2025 EmailAI Pro</p>
                 <div className="space-x-4">
-                    <a href="#" target="_blank">LinkedIn</a>
-                    <a href="#" target="_blank">Twitter</a>
-                    <a href="#" target="_blank">Facebook</a>
-                    <a href="#" target="_blank">Instagram</a>
+                    <a href="#">LinkedIn</a>
+                    <a href="#">Twitter</a>
+                    <a href="#">Facebook</a>
+                    <a href="#">Instagram</a>
                 </div>
             </footer>
         </div>

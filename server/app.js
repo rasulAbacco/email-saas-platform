@@ -11,7 +11,7 @@ const campaignRoutes = require('./routes/campaignRoutes');
 const formRoutes = require('./routes/formRoutes');
 const analyticsRoutes = require('./routes/analyticsRoutes');
 const testRoutes = require('./routes/testRoute');
-
+const statsRoutes = require('./routes/statsRoutes');
 
 require('dotenv').config();
 
@@ -33,6 +33,9 @@ app.use('/api/users', userRoutes);
 app.use('/api/campaigns', campaignRoutes);
 app.use('/api/forms', formRoutes);
 app.use('/api/analytics', analyticsRoutes);
+app.use('/api/auth/stats', statsRoutes); // ✅ mount stats
+// app.use('/api/campaigns', require('./routes/campaignRoutes'));
+
 
 app.use('/api/test', testRoutes);
 
