@@ -6,6 +6,7 @@ import styles from '../styles/navigation.module.css';
 import { FiSun, FiMoon } from 'react-icons/fi'; // Light/Dark icons
 import { FaRocket, FaTags, FaInfoCircle, FaSignInAlt, FaUserPlus } from 'react-icons/fa';
 import Footer from '@/components/Footer';
+import Navbar from '@/components/Navbar';
 
 export default function HomePage() {
     const [theme, setTheme] = useState('light');
@@ -31,36 +32,7 @@ export default function HomePage() {
             </Head>
 
             {/* Top Navigation */}
-            <header className={`flex justify-between items-center px-6 py-4 ${styles.navigation}`}>
-                <h1 className="text-xl font-bold text-[#9400FF] dark:text-white">📧 EmailAI Pro</h1>
-                <nav className="space-x-6 hidden md:flex items-center">
-                    <Link href="#features" className={styles.navLink}>
-                        <FaRocket className="inline-block mr-1" /> Features
-                    </Link>
-                    <Link href="#pricing" className={styles.navLink}>
-                        <FaTags className="inline-block mr-1" /> Pricing
-                    </Link>
-                    <Link href="#about" className={styles.navLink}>
-                        <FaInfoCircle className="inline-block mr-1" /> About
-                    </Link>
-                    <Link href="/login" className={styles.navLink}>
-                        <FaSignInAlt className="inline-block mr-1" /> Login
-                    </Link>
-                    <Link
-                        href="/signup"
-                        className="bg-[#7F27FF] text-white px-2 py-1 rounded hover:bg-[#9400FF] transition flex items-center gap-2"
-                    >
-                        <FaUserPlus /> Get Started
-                    </Link>
-                </nav>
-                <button
-                    onClick={toggleTheme}
-                    className="ml-4 text-black text-xl hover:scale-105 transition-transform dark:text-white"
-                    title="Toggle Theme"
-                >
-                    {theme === 'dark' ? <FiSun /> : <FiMoon />}
-                </button>
-            </header>
+             <Navbar/>
 
             {/* Hero Section */}
             <main className="flex flex-col md:flex-row items-center justify-between px-6 py-36 max-w-7xl mx-auto">
