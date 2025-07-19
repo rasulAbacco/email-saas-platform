@@ -2,7 +2,6 @@
 import Head from 'next/head';
 import { motion } from 'framer-motion';
 import styles from '../styles/navigation.module.css';
-import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import Navbar from '@/components/Navbar';
 import Link from 'next/link';
