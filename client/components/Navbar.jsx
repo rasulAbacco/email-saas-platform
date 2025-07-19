@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { FiSun, FiMoon } from 'react-icons/fi';
 import { FaRocket, FaTags, FaInfoCircle, FaSignInAlt, FaUserPlus, FaHome } from 'react-icons/fa';
 import styles from '../styles/navigation.module.css';
+import { RiBarChartBoxAiFill } from "react-icons/ri";
 
 export default function Navbar() {
     const [theme, setTheme] = useState('light');
@@ -37,6 +38,9 @@ export default function Navbar() {
                 </Link>
                 <Link href="/About" className={styles.navLink}>
                     <FaInfoCircle className="inline-block mr-1" /> About
+                </Link>
+                <Link href="/Integrations" className={styles.navLink}>
+                    <RiBarChartBoxAiFill className="inline-block mr-1" /> Intergrations
                 </Link>
                 <Link href="/login" className={styles.navLink}>
                     <FaSignInAlt className="inline-block mr-1" /> Login
