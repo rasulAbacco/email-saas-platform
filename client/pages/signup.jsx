@@ -3,6 +3,7 @@ import Link from 'next/link';
 import Head from 'next/head';
 import useAuthStore from '@/store/authStore';
 import { useRouter } from 'next/router';
+import Navbar from '@/components/Navbar';
 
 export default function Signup() {
     const [form, setForm] = useState({ name: '', email: '', password: '' });
@@ -34,6 +35,7 @@ export default function Signup() {
     return (
         <div className="min-h-screen flex items-center justify-center bg-gray-100 dark:bg-gray-900">
             <Head><title>Signup - EmailAI Pro</title></Head>
+            <Navbar/>
             <div className="bg-white dark:bg-gray-800 p-8 rounded-lg shadow-md w-full max-w-md">
                 <h2 className="text-2xl font-bold mb-6 text-center text-gray-800 dark:text-white">Create Account</h2>
                 <form onSubmit={handleSubmit} className="space-y-4">
