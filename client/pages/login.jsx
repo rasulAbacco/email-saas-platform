@@ -4,6 +4,7 @@ import Head from 'next/head';
 import { loginUser } from '@/services/authService'; // ✅ fixed import
 import useAuthStore from '@/store/authStore';
 import { useRouter } from 'next/router';
+import Navbar from '@/components/Navbar';
 
 export default function Login() {
     const [form, setForm] = useState({ email: '', password: '' });
@@ -36,7 +37,7 @@ export default function Login() {
     return (
         <div className="min-h-screen flex items-center justify-center bg-gray-100 dark:bg-gray-900">
             <Head><title>Login - EmailAI Pro</title></Head>
-            
+            <Navbar/>
             <div className="bg-white dark:bg-gray-800 p-8 rounded-lg shadow-md w-full max-w-md">
                 <h2 className="text-2xl font-bold mb-6 text-center text-gray-800 dark:text-white">Log In</h2>
                 <form onSubmit={handleSubmit} className="space-y-4">

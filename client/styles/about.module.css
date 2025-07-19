@@ -1,0 +1,13 @@
+.aboutSection {}
+
+
+.aboutTitle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 5rem;
+}
+
+.aboutTitle h1 {
+    text-align: center;
+}

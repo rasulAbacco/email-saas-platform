@@ -1,3 +1,5 @@
+
+
 .navigation {
     position: fixed;
     top: 1rem;
@@ -54,6 +56,12 @@
 .navLink:hover::after {
     transform: scaleX(1);
 }
+
+/* 
+=======================================
+    HeroSection Style
+=======================================
+*/
 
 .heroFadeIn {
     width: 45%;
@@ -223,7 +231,7 @@
         height: 45px;
     }
 
-    .heroGradientBox{
+    .heroGradientBox {
         display: flex;
         flex-direction: row;
     }
@@ -236,7 +244,6 @@
     .heroImg2 {
         width: 40%;
     }
-
 }
 
 @media (max-width: 480px) {
@@ -279,3 +286,189 @@
         width: 50%;
     }
 }
+
+/* 
+====================
+Trusted Section
+====================
+*/
+
+.trustedSection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 20rem;
+    margin-top: 4rem;
+
+    background: rgba(255, 255, 255, 0.1);
+    /* semi-transparent */
+    backdrop-filter: blur(10px);
+    /* apply blur */
+    -webkit-backdrop-filter: blur(10px);
+    /* Safari support */
+    border-radius: 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    /* optional border for glass effect */
+    color: #000000;
+}
+
+@media (prefers-color-scheme: dark) {
+    .trustedSection {
+        background: rgba(125, 38, 255, 0.1);
+        border: 1px solid rgba(125, 38, 255, 0.2);
+        color: #ffffff;
+        box-shadow: 0 0 12px 2px rgba(125, 38, 255, 0.6);
+        /* glow effect */
+    }
+}
+
+.trustedSection h2 {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.trustedLink ul {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 3rem;
+}
+
+.trustedLink ul li {
+    width: 200px;
+    height: 50px;
+    border-radius: 25px;
+    cursor: pointer;
+}
+
+@media (max-width: 900px) {
+    .trustedSection{
+        height: 100%;
+        padding: 10px;
+    }
+    .trustedSection h2{
+        text-align: center;
+        font-weight: 16px;
+    }
+
+    .trustedLink{
+        padding:10px;
+    }
+
+    .trustedLink ul {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        padding:10px;
+    }
+}
+
+/* 
+=================================
+Platform Features
+=================================
+*/
+
+.platformFeatures {
+    text-align: center;
+    padding: 4rem 2rem;
+    width: 100%;
+    background: rgba(125, 38, 255, 0.08); /* light purple tint */
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px); /* for Safari support */
+    border-radius: 1rem;
+    transition: background 0.3s ease;
+    margin-top: 2rem;
+}
+
+
+.tag {
+    display: inline-block;
+    font-size: 0.85rem;
+    color: #7f27ff;
+    background-color: rgba(125, 38, 255, 0.1);
+    padding: 0.4rem 1rem;
+    border-radius: 1rem;
+    font-weight: 600;
+    margin-bottom: 1.2rem;
+}
+
+.platformFeatures h2 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 0.6rem;
+}
+
+.subtitle {
+    font-size: 1.05rem;
+    color: rgb(66, 65, 65);
+    max-width: 750px;
+    margin: 0 auto 3rem auto;
+    line-height: 1.6;
+}
+
+.featureGrid {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    justify-items: center;
+}
+
+.featureCard {
+    padding: 2rem;
+    border-radius: 0.5rem;
+    text-align: left;
+    max-width: 320px;
+    box-shadow: var(--card-shadow);
+    border: 1px solid var(--card-border);
+    transition: all 0.3s ease;
+}
+
+.featureCard:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--card-shadow-hover);
+    border-color: var(--card-border-hover);
+}
+
+.icon {
+    font-size: 1.8rem;
+    width: 3.2rem;
+    height: 3.2rem;
+    background: linear-gradient(135deg, #7f27ff, #ad49e1);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.8rem;
+    margin-bottom: 1rem;
+}
+
+.featureCard h3 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.featureCard p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+
+/* 
+========================================
+    FAQ QAN Section
+========================================
+*/
+.faqSection{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    
+}
+
