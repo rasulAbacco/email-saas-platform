@@ -4,10 +4,7 @@ import { motion } from 'framer-motion';
 import styles from '../styles/navigation.module.css';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-<<<<<<< HEAD
 import Navbar from '@/components/Navbar';
-
-=======
 import Link from 'next/link';
 import PlatformFeatures from '@/components/PlatformFeatures';
 import Lenis from 'lenis';
@@ -16,7 +13,6 @@ import TeamUseCases from '@/components/TeamUseCases';
 import GrowthPerformanceChart from '@/components/GrowthPerformanceChart';
 import EmailMarketingCTA from '@/components/EmailMarketingCTA';
 import FAQSection from '../components/FAQSection';
->>>>>>> 089fb599974e8bfd1ff909f7908fec2a690220cb
 export default function HomePage() {
 
     useEffect(() => {
@@ -44,11 +40,7 @@ export default function HomePage() {
             </Head>
 
             {/* Top Navigation */}
-<<<<<<< HEAD
-             <Navbar/>
-=======
             <Navbar />
->>>>>>> 089fb599974e8bfd1ff909f7908fec2a690220cb
 
             {/* Hero Section */}
             <main className="flex flex-col  items-center justify-between px-6 py-36 max-w-7xl mx-auto">
