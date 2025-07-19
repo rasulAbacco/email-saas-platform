@@ -1,3 +1,5 @@
+
+
 .navigation {
     position: fixed;
     top: 1rem;
@@ -7,7 +9,6 @@
     max-width: 1200px;
     padding: 0.7rem 3rem;
     border-radius: 1.5rem;
-
 
     background: rgba(255, 255, 255, 0.15);
     backdrop-filter: blur(14px) saturate(160%);
@@ -56,6 +57,12 @@
     transform: scaleX(1);
 }
 
+/* 
+=======================================
+    HeroSection Style
+=======================================
+*/
+
 .heroFadeIn {
     width: 45%;
     animation: fadeInUp 0.8s ease forwards;
@@ -74,15 +81,14 @@
     font-weight: 800;
     font-size: 3rem;
 }
+
 .heroFadeIn h2 span {
     font-weight: 800;
     font-size: 4rem;
 }
 
-
-
 .ctaButton {
-    background: linear-gradient(145deg, #7F27FF, #9400FF);
+    background: linear-gradient(145deg, #7f27ff, #9400ff);
     border: none;
     width: 100px;
     border-radius: 1rem;
@@ -97,7 +103,7 @@
 .ctaButton:hover {
     transform: translateY(-3px);
     box-shadow: 0 8px 24px rgba(127, 39, 255, 0.5);
-    background: linear-gradient(145deg, #6528F7, #AD49E1);
+    background: linear-gradient(145deg, #6528f7, #ad49e1);
 }
 
 .heroGradientBox {
@@ -119,23 +125,19 @@
     width: 100%;
     height: 100%;
     transition: transform 2s ease;
-filter:
-        drop-shadow(0 4px 8px rgba(127, 39, 255, 0.3))
-        drop-shadow(0 8px 16px rgba(148, 0, 255, 0.2));    transform-style: preserve-3d;
+    filter: drop-shadow(0 4px 8px rgba(127, 39, 255, 0.3)) drop-shadow(0 8px 16px rgba(148, 0, 255, 0.2));
+    transform-style: preserve-3d;
 }
 
 .heroImg1 img:hover {
     transform: rotateY(20deg) rotateX(20deg) scale(1.05);
 }
 
-
 .heroImg2 img {
     width: 100%;
     height: 100%;
     transition: filter 3s ease-in-out;
-        filter:
-        drop-shadow(0 4px 8px rgba(127, 39, 255, 0.3))
-        drop-shadow(0 8px 16px rgba(148, 0, 255, 0.2));
+    filter: drop-shadow(0 4px 8px rgba(127, 39, 255, 0.3)) drop-shadow(0 8px 16px rgba(148, 0, 255, 0.2));
 }
 
 .heroImg3 {
@@ -147,19 +149,17 @@ filter:
 .heroImg3 img {
     width: 100%;
     transition: transform 2s ease;
-    filter:
-        drop-shadow(0 4px 8px rgba(127, 39, 255, 0.3))
-        drop-shadow(0 8px 16px rgba(148, 0, 255, 0.2));
-
+    filter: drop-shadow(0 4px 8px rgba(127, 39, 255, 0.3)) drop-shadow(0 8px 16px rgba(148, 0, 255, 0.2));
 }
 
 .heroImg3 img:hover {
     transform: rotateY(20deg) rotateX(20deg) scale(1.05);
 }
 
-
 @keyframes glowPulse {
-    0%, 100% {
+
+    0%,
+    100% {
         box-shadow: 0 0 30px rgba(127, 39, 255, 0.4);
     }
 
@@ -167,3 +167,308 @@ filter:
         box-shadow: 0 0 50px rgba(173, 73, 225, 0.6);
     }
 }
+
+/* Responsive Styles */
+@media (max-width: 1200px) {
+    .navigation {
+        width: 90%;
+        padding: 0.6rem 2rem;
+    }
+
+    .heroImg1,
+    .heroImg3 {
+        width: 400px;
+    }
+
+    .heroFadeIn h2 {
+        font-size: 2.5rem;
+    }
+
+    .heroFadeIn h2 span {
+        font-size: 3rem;
+    }
+}
+
+@media (max-width: 992px) {
+    .heroGradientBox {
+        flex-direction: column;
+        height: auto;
+        padding: 2rem 1rem;
+    }
+
+    .heroImg1,
+    .heroImg3 {
+        width: 100%;
+        margin: 1rem 0;
+    }
+
+    .heroFadeIn {
+        width: 100%;
+        text-align: center;
+    }
+
+    .ctaButton {
+        width: 120px;
+    }
+}
+
+@media (max-width: 900px) {
+    .navigation {
+        padding: 0.5rem 1.5rem;
+        border-radius: 1rem;
+    }
+
+    .heroFadeIn h2 {
+        font-size: 2rem;
+    }
+
+    .heroFadeIn h2 span {
+        font-size: 2.5rem;
+    }
+
+    .ctaButton {
+        width: 100%;
+        height: 45px;
+    }
+
+    .heroGradientBox {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .heroImg1,
+    .heroImg3 {
+        width: 20%;
+    }
+
+    .heroImg2 {
+        width: 40%;
+    }
+}
+
+@media (max-width: 480px) {
+    .navigation {
+        width: 95%;
+        padding: 0.4rem 1rem;
+        top: 0.5rem;
+    }
+
+    .heroFadeIn h2 {
+        font-size: 1.5rem;
+    }
+
+    .heroFadeIn h2 span {
+        font-size: 2rem;
+    }
+
+    .ctaButton {
+        font-size: 0.9rem;
+        height: 42px;
+        padding: 8px 16px;
+    }
+
+    .heroImages {
+        display: flex;
+    }
+
+    .heroGradientBox {
+        gap: 0.5rem;
+        display: flex;
+        flex-direction: row;
+    }
+
+    .heroImg1,
+    .heroImg3 {
+        width: 25%;
+    }
+
+    .heroImg2 {
+        width: 50%;
+    }
+}
+
+/* 
+====================
+Trusted Section
+====================
+*/
+
+.trustedSection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 20rem;
+    margin-top: 4rem;
+
+    background: rgba(255, 255, 255, 0.1);
+    /* semi-transparent */
+    backdrop-filter: blur(10px);
+    /* apply blur */
+    -webkit-backdrop-filter: blur(10px);
+    /* Safari support */
+    border-radius: 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    /* optional border for glass effect */
+    color: #000000;
+}
+
+@media (prefers-color-scheme: dark) {
+    .trustedSection {
+        background: rgba(125, 38, 255, 0.1);
+        border: 1px solid rgba(125, 38, 255, 0.2);
+        color: #ffffff;
+        box-shadow: 0 0 12px 2px rgba(125, 38, 255, 0.6);
+        /* glow effect */
+    }
+}
+
+.trustedSection h2 {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.trustedLink ul {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 3rem;
+}
+
+.trustedLink ul li {
+    width: 200px;
+    height: 50px;
+    border-radius: 25px;
+    cursor: pointer;
+}
+
+@media (max-width: 900px) {
+    .trustedSection{
+        height: 100%;
+        padding: 10px;
+    }
+    .trustedSection h2{
+        text-align: center;
+        font-weight: 16px;
+    }
+
+    .trustedLink{
+        padding:10px;
+    }
+
+    .trustedLink ul {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        padding:10px;
+    }
+}
+
+/* 
+=================================
+Platform Features
+=================================
+*/
+
+.platformFeatures {
+    text-align: center;
+    padding: 4rem 2rem;
+    width: 100%;
+    background: rgba(125, 38, 255, 0.08); /* light purple tint */
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px); /* for Safari support */
+    border-radius: 1rem;
+    transition: background 0.3s ease;
+    margin-top: 2rem;
+}
+
+
+.tag {
+    display: inline-block;
+    font-size: 0.85rem;
+    color: #7f27ff;
+    background-color: rgba(125, 38, 255, 0.1);
+    padding: 0.4rem 1rem;
+    border-radius: 1rem;
+    font-weight: 600;
+    margin-bottom: 1.2rem;
+}
+
+.platformFeatures h2 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 0.6rem;
+}
+
+.subtitle {
+    font-size: 1.05rem;
+    color: rgb(66, 65, 65);
+    max-width: 750px;
+    margin: 0 auto 3rem auto;
+    line-height: 1.6;
+}
+
+.featureGrid {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    justify-items: center;
+}
+
+.featureCard {
+    padding: 2rem;
+    border-radius: 0.5rem;
+    text-align: left;
+    max-width: 320px;
+    box-shadow: var(--card-shadow);
+    border: 1px solid var(--card-border);
+    transition: all 0.3s ease;
+}
+
+.featureCard:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--card-shadow-hover);
+    border-color: var(--card-border-hover);
+}
+
+.icon {
+    font-size: 1.8rem;
+    width: 3.2rem;
+    height: 3.2rem;
+    background: linear-gradient(135deg, #7f27ff, #ad49e1);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.8rem;
+    margin-bottom: 1rem;
+}
+
+.featureCard h3 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.featureCard p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+
+/* 
+========================================
+    FAQ QAN Section
+========================================
+*/
+.faqSection{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    
+}
+
