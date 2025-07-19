@@ -55,3 +55,115 @@
 .navLink:hover::after {
     transform: scaleX(1);
 }
+
+.heroFadeIn {
+    width: 45%;
+    animation: fadeInUp 0.8s ease forwards;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.heroFadeIn h2 {
+    font-weight: 800;
+    font-size: 3rem;
+}
+.heroFadeIn h2 span {
+    font-weight: 800;
+    font-size: 4rem;
+}
+
+
+
+.ctaButton {
+    background: linear-gradient(145deg, #7F27FF, #9400FF);
+    border: none;
+    width: 100px;
+    border-radius: 1rem;
+    padding: 10px 20px;
+    height: 50px;
+    font-weight: 600;
+    box-shadow: 0 4px 20px rgba(127, 39, 255, 0.4);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    color: white;
+}
+
+.ctaButton:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 24px rgba(127, 39, 255, 0.5);
+    background: linear-gradient(145deg, #6528F7, #AD49E1);
+}
+
+.heroGradientBox {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50vh;
+    gap: 1rem;
+}
+
+.heroImg1 {
+    width: 500px;
+    margin-top: 0;
+    margin-bottom: auto;
+}
+
+.heroImg1 img {
+    width: 100%;
+    height: 100%;
+    transition: transform 2s ease;
+filter:
+        drop-shadow(0 4px 8px rgba(127, 39, 255, 0.3))
+        drop-shadow(0 8px 16px rgba(148, 0, 255, 0.2));    transform-style: preserve-3d;
+}
+
+.heroImg1 img:hover {
+    transform: rotateY(20deg) rotateX(20deg) scale(1.05);
+}
+
+
+.heroImg2 img {
+    width: 100%;
+    height: 100%;
+    transition: filter 3s ease-in-out;
+        filter:
+        drop-shadow(0 4px 8px rgba(127, 39, 255, 0.3))
+        drop-shadow(0 8px 16px rgba(148, 0, 255, 0.2));
+}
+
+.heroImg3 {
+    width: 500px;
+    margin-top: auto;
+    margin-bottom: 0;
+}
+
+.heroImg3 img {
+    width: 100%;
+    transition: transform 2s ease;
+    filter:
+        drop-shadow(0 4px 8px rgba(127, 39, 255, 0.3))
+        drop-shadow(0 8px 16px rgba(148, 0, 255, 0.2));
+
+}
+
+.heroImg3 img:hover {
+    transform: rotateY(20deg) rotateX(20deg) scale(1.05);
+}
+
+
+@keyframes glowPulse {
+    0%, 100% {
+        box-shadow: 0 0 30px rgba(127, 39, 255, 0.4);
+    }
+
+    50% {
+        box-shadow: 0 0 50px rgba(173, 73, 225, 0.6);
+    }
+}
