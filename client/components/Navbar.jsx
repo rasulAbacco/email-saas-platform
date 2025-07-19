@@ -2,11 +2,7 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { FiSun, FiMoon } from 'react-icons/fi';
-<<<<<<< HEAD
 import { FaRocket, FaTags, FaInfoCircle, FaSignInAlt, FaUserPlus } from 'react-icons/fa';
-=======
-import { FaRocket, FaTags, FaInfoCircle, FaSignInAlt, FaUserPlus, FaHome } from 'react-icons/fa';
->>>>>>> 089fb599974e8bfd1ff909f7908fec2a690220cb
 import styles from '../styles/navigation.module.css';
 
 export default function Navbar() {
@@ -30,7 +26,6 @@ export default function Navbar() {
         <header className={`flex justify-between items-center px-6 py-4 ${styles.navigation}`}>
             <h1 className="text-xl font-bold text-[#9400FF] dark:text-white">📧 EmailAI Pro</h1>
             <nav className="space-x-6 hidden md:flex items-center">
-<<<<<<< HEAD
                 <Link href="/Features" className={styles.navLink}>
                     <FaRocket className="inline-block mr-1" /> Features
                 </Link>
@@ -41,30 +36,13 @@ export default function Navbar() {
                     <FaInfoCircle className="inline-block mr-1" /> About
                 </Link>
                 <Link href="/Integrations" className={styles.navLink}>
-                      Integrations
+                    Integrations
                 </Link>
                 <Link href="/login" className={styles.navLink}>
                     <FaSignInAlt className="inline-block mr-1" /> Login
                 </Link>
                 
- 
-=======
-                <Link href="/" className={styles.navLink}>
-                    <FaHome className="inline-block mr-1" /> Home
-                </Link>
-                <Link href="/Features" className={styles.navLink}>
-                    <FaRocket className="inline-block mr-1" /> Features
-                </Link>
-                <Link href="/pricing" className={styles.navLink}>
-                    <FaTags className="inline-block mr-1" /> Pricing
-                </Link>
-                <Link href="/About" className={styles.navLink}>
-                    <FaInfoCircle className="inline-block mr-1" /> About
-                </Link>
-                <Link href="/login" className={styles.navLink}>
-                    <FaSignInAlt className="inline-block mr-1" /> Login
-                </Link>
->>>>>>> 089fb599974e8bfd1ff909f7908fec2a690220cb
+
                 <Link
                     href="/signup"
                     className="bg-[#7F27FF] text-white px-2 py-1 rounded hover:bg-[#9400FF] transition flex items-center gap-2"
@@ -81,8 +59,4 @@ export default function Navbar() {
             </button>
         </header>
     );
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> 089fb599974e8bfd1ff909f7908fec2a690220cb
