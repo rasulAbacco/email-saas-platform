@@ -100,7 +100,7 @@ const EmailMarketingCTA = () => {
                 shadow-lg hover:shadow-xl bg-[#6528F7] `}
                         >
                             <div className="text-3xl font-bold text-[#00FF9C] mb-2">{stat.number}</div>
-                            <div className="text-white dark:text-gray-300">{stat.label}</div>
+                            <div className="text-black dark:text-gray-800">{stat.label}</div>
                         </div>
                     ))}
                 </div>

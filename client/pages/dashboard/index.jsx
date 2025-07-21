@@ -54,7 +54,7 @@ function DashboardPage() {
         <DashboardLayout>
             <Head><title>Dashboard - EmailAI Pro</title></Head>
 
-            <div className="p-6 max-w-7xl mx-auto">
+            <div className={`p-6 w-full mx-auto mt-[5%]`}>
                 <h1 className="text-3xl font-bold mb-6">📊 Dashboard Overview</h1>
 
                 {/* Metrics */}
