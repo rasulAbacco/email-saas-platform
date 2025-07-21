@@ -426,4 +426,8 @@ const Automations = () => {
   );
 };
 
+<<<<<<< HEAD
 export default Automations;
+=======
+export default Automations;
+>>>>>>> 98266f6587edc9ae55df78cffb33333fe6160fec

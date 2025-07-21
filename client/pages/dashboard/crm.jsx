@@ -1,12 +1,39 @@
 import Head from 'next/head';
 import DashboardLayout from '../../components/DashboardLayout';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.bundle.min'; // 👈 This includes Popper.js
+
 export default function CRMPage() {
     return (
         <DashboardLayout>
-            <Head><title>CRM - EmailAI Pro</title></Head>
-            <div className="p-6">
-                <h1 className="text-2xl font-bold mb-4">👥 CRM</h1>
-                <p className="text-gray-600 dark:text-gray-300">Track leads, manage contacts, and organize pipelines.</p>
+            <Head>
+                <title>CRM - EmailAI Pro</title>
+            </Head>
+            <div>
+                <nav className="navbar navbar-expand-lg bg-body-tertiary">
+                    <div className="container-fluid">
+                        <a className="navbar-brand" href="#">Navbar</a>
+                        <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                            <span className="navbar-toggler-icon"></span>
+                        </button>
+                        <div className="collapse navbar-collapse" id="navbarNav">
+                            <ul className="navbar-nav">
+                                <li className="nav-item">
+                                    <a className="nav-link active" aria-current="page" href="#">Home</a>
+                                </li>
+                                <li className="nav-item">
+                                    <a className="nav-link" href="#">Features</a>
+                                </li>
+                                <li className="nav-item">
+                                    <a className="nav-link" href="#">Pricing</a>
+                                </li>
+                                <li className="nav-item">
+                                    <a className="nav-link disabled" aria-disabled="true">Disabled</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
             </div>
         </DashboardLayout>
     );
