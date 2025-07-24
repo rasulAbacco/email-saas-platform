@@ -11,6 +11,7 @@ import {
     FaHome,
 } from 'react-icons/fa';
 import styles from '../styles/navigation.module.css';
+import { GrContactInfo } from "react-icons/gr";
 
 export default function Navbar() {
     const [theme, setTheme] = useState('light');
@@ -76,8 +77,14 @@ export default function Navbar() {
                 <Link href="/Pricing" className={styles.navLink}>
                     <FaTags className="inline-block mr-1" /> Pricing
                 </Link>
+                <Link href="/Integrations" className={styles.navLink}>
+                    <FaTags className="inline-block mr-1" /> Integrations
+                </Link>
                 <Link href="/About" className={styles.navLink}>
                     <FaInfoCircle className="inline-block mr-1" /> About
+                </Link>
+                <Link href="/Contact" className={styles.navLink}>
+                    <GrContactInfo className="inline-block mr-1" /> Contact Us
                 </Link>
                 <Link href="/login" className={styles.navLink}>
                     <FaSignInAlt className="inline-block mr-1" /> Login

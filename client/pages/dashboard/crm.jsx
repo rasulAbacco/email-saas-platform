@@ -3,6 +3,8 @@ import {
     Plus, Search, Filter, Upload, Download, Users
 } from 'lucide-react';
 import DashboardLayout from '../../components/DashboardLayout';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.bundle.min'; // 👈 This includes Popper.js
 import CRMHeader from '../../components/CRM/CRMHeader';
 import StatsCards from '../../components/CRM/StatsCards';
 import ChartsSection from '../../components/CRM/ChartsSection';
@@ -11,6 +13,7 @@ import PipelineBoard from '../../components/CRM/PipelineBoard';
 import ActivityTimeline from '../../components/CRM/ActivityTimeline';
 import ContactModal from '../../components/CRM/ContactModal';
 import ContactDetailDrawer from '../../components/CRM/ContactDetailDrawer';
+
 
 export default function CRMPage() {
     const [activeView, setActiveView] = useState('dashboard');
@@ -158,6 +161,34 @@ export default function CRMPage() {
 
     return (
         <DashboardLayout>
+            <Head>
+                <title>CRM - EmailAI Pro</title>
+            </Head>
+            <div>
+                <nav className="navbar navbar-expand-lg bg-body-tertiary">
+                    <div className="container-fluid">
+                        <a className="navbar-brand" href="#">Navbar</a>
+                        <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                            <span className="navbar-toggler-icon"></span>
+                        </button>
+                        <div className="collapse navbar-collapse" id="navbarNav">
+                            <ul className="navbar-nav">
+                                <li className="nav-item">
+                                    <a className="nav-link active" aria-current="page" href="#">Home</a>
+                                </li>
+                                <li className="nav-item">
+                                    <a className="nav-link" href="#">Features</a>
+                                </li>
+                                <li className="nav-item">
+                                    <a className="nav-link" href="#">Pricing</a>
+                                </li>
+                                <li className="nav-item">
+                                    <a className="nav-link disabled" aria-disabled="true">Disabled</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
             <div className={`min-h-screen bg-gray-50 dark:bg-gray-900 mt-[5%] w-full ${darkMode ? 'dark' : ''}`}>
             <CRMHeader
                 darkMode={darkMode}

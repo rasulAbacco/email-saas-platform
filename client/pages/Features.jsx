@@ -4,6 +4,7 @@ import { FaRobot, FaShieldAlt, FaChartBar, FaTags, FaPuzzlePiece, FaFlask } from
 import { FaBullseye, FaEnvelopeOpenText, FaHeartbeat, FaComments } from 'react-icons/fa';
 import styles from '../styles/features.module.css'
 import { IoMdCheckmarkCircleOutline } from "react-icons/io";
+import SocialmediaIcons from './SocialmediaIcons';
 
 function Features() {
    const features = [
@@ -186,7 +187,7 @@ function Features() {
             </div>
         </section>
 
-
+        <SocialmediaIcons/>
     </div>
   )
 }

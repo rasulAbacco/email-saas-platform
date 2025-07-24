@@ -12,6 +12,8 @@ import TeamUseCases from '@/components/TeamUseCases';
 import GrowthPerformanceChart from '@/components/GrowthPerformanceChart';
 import EmailMarketingCTA from '@/components/EmailMarketingCTA';
 import FAQSection from '../components/FAQSection';
+import SocialmediaIcons from './SocialmediaIcons';
+import ChatBox from './ChatBox';
 export default function HomePage() {
 
     useEffect(() => {
@@ -34,9 +36,11 @@ export default function HomePage() {
 
     return (
         <div className="min-h-screen bg-white dark:bg-[#0F044C] text-black dark:text-white">
+           
             <Head>
                 <title>EmailAI Pro - Modern Email & CRM Automation</title>
             </Head>
+              
 
             {/* Top Navigation */}
             <Navbar />
@@ -90,7 +94,7 @@ export default function HomePage() {
                             </motion.div>
                         </div>
                     </div>
-
+                 
                 </div>
                 <section className={`${styles.trustedSection} py-2 bg-[#7d26ff] dark:bg-[#000957]`}>
                     <h2 className='text-black dark:text-white'>Trusted by 50,000+ businesses worldwide</h2>
@@ -102,6 +106,7 @@ export default function HomePage() {
                             <li className='bg-[#7d26ff] flex items-center justify-center dark:bg-[#7d26ff]' >ScaleUp</li>
                         </ul>
                     </div>
+                    
                 </section>
 
 
@@ -116,8 +121,16 @@ export default function HomePage() {
             <EmailMarketingCTA/>
 
             <FAQSection/>
-
+            
             <Footer />
+            <div className="fixed bottom-6 right-6 flex items-end gap-4 z-50">
+                <ChatBox />
+                <SocialmediaIcons />
+                
+            </div>
+
+          
         </div>
+
     );
 }

@@ -20,12 +20,8 @@ export default function Header({ isCollapsed, toggleSidebar }) {
     };
 
     return (
-        <header
-            className={clsx(
-                "flex items-center justify-between px-6 py-4 bg-white dark:bg-[#0F044C] border-b border-gray-200 dark:border-[#892CDC] transition-all duration-300 fixed top-0 z-30",
-                isCollapsed ? "ml-14 w-[calc(100%-3.5rem)]" : "ml-64 w-[calc(100%-17%)]"
-            )}
-        >
+        <header className={`flex items-center justify-between px-6 py-4 bg-white dark:bg-[#0F044C] border-b border-gray-200 dark:border-[#892CDC] transition-all duration-300 fixed top-0 z-30 ${isCollapsed ? 'ml-14':''
+            } w-[calc(100%-3.5rem)] ${!isCollapsed ? 'w-[calc(100%-16%)]' : ''}`}>
             <div className="flex items-center gap-4">
                 <button
                     onClick={toggleSidebar}
