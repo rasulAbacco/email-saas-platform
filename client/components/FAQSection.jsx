@@ -59,7 +59,7 @@ const FAQSection = () => {
     ];
 
     const PaymentIcons = () => (
-        <div className="flex flex-wrap gap-2 mt-4">
+        <div className="flex flex-wrap gap-2 mt-4 max-w-[100rem] mx-auto">
             {['VISA', 'MC', 'AMEX', 'DISC', 'JCB', 'PAYPAL', 'APPLE', 'GOOGLE'].map((card) => (
                 <div
                     key={card}
@@ -98,7 +98,7 @@ const FAQSection = () => {
     // Prevent hydration mismatch by not rendering interactive elements on server
     if (!isClient) {
         return (
-            <div className={`min-h-screen transition-colors duration-300 ${themeClasses}`}>
+            <div className={`transition-colors duration-300 ${themeClasses}`}>
                 <div className="container mx-auto px-6 py-16 max-w-4xl">
                     <div className="text-center mb-12">
                         <h1 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900 dark:text-white">
@@ -136,7 +136,7 @@ const FAQSection = () => {
     }
 
     return (
-        <div className={`min-h-screen transition-colors duration-300 dark:bg-[#180759] ${themeClasses}`}>
+        <div className={` transition-colors max-w-[100rem] mx-auto duration-300 dark:bg-[#180759] ${themeClasses}`}>
             {/* Theme Toggle */}
 
 
@@ -160,7 +160,7 @@ const FAQSection = () => {
                                 border rounded-2xl transition-all duration-300 overflow-hidden
                                 ${expandedItems[index] ? 'shadow-xl scale-[1.01]' : 'shadow-md'}
                                 bg-gradient-to-br from-purple-50 to-white border-purple-200
-                                dark:from-[#0F044C] dark:to-[#1A1A40] dark:border-[#892CDC] ${StyleSheet.faqQAN}` }>
+                                dark:from-[#0F044C] dark:to-[#1A1A40] dark:border-[#892CDC] ${styles.faqQAN}` }>
                             <button
                                 onClick={() => toggleExpanded(index)}
                                 className="w-full p-6 text-left flex items-start gap-4 group hover:bg-[#AD49E1]/10 dark:hover:bg-[#892CDC]/20 rounded-2xl transition-colors"

@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { Menu, Sun, Moon, Settings } from 'lucide-react';
+import clsx from "clsx";
 
 export default function Header({ isCollapsed, toggleSidebar }) {
     const [theme, setTheme] = useState('light');

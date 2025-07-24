@@ -46,8 +46,8 @@ export default function HomePage() {
             <Navbar />
 
             {/* Hero Section */}
-            <main className="flex flex-col  items-center justify-between px-6 py-36 max-w-7xl mx-auto">
-                <div className="heroSection flex items-center justify-between px-6 max-w-7xl mx-auto">
+            <main className="flex flex-col  items-center justify-between px-6 py-5 h-full max-w-7xl mx-auto">
+                <div className="heroSection flex items-center justify-between mt-[13%] mb-[15%] px-6 max-w-7xl mx-auto">
                     <motion.div
                         className={`w-full md:w-1/2 ${styles.heroFadeIn}`}
                         initial={{ opacity: 0, x: -50 }}
@@ -66,7 +66,7 @@ export default function HomePage() {
                         </Link>
                     </motion.div>
 
-                    <div className={`w-full md:w-1/2 mt-10 md:mt-0 ${styles.heroImages}`}>
+                    <div className={`w-full md:w-1/2 mt-5 max-h-32 md:mt-0 ${styles.heroImages}`}>
                         <div className={`${styles.heroGradientBox}`}>
                             <motion.div className={`${styles.heroImg1}`}
                                 whileHover={{
@@ -96,7 +96,7 @@ export default function HomePage() {
                     </div>
                  
                 </div>
-                <section className={`${styles.trustedSection} py-20 bg-[#7d26ff] dark:bg-[#000957]`}>
+                <section className={`${styles.trustedSection} py-2 bg-[#7d26ff] dark:bg-[#000957]`}>
                     <h2 className='text-black dark:text-white'>Trusted by 50,000+ businesses worldwide</h2>
                     <div className={`${styles.trustedLink} py-20`} >
                         <ul>

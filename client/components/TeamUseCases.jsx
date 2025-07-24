@@ -38,7 +38,7 @@ const TeamUseCases = () => {
         : "bg-white border-gray-200";
 
     return (
-        <div className={`dark:bg-[#0f044d] min-h-screen transition-colors duration-300 ${themeClasses}`}>
+        <div className={`dark:bg-[#0f044d] transition-colors max-w-[100rem] max-h-[100%] mx-auto duration-300 ${themeClasses}`}>
             {/* Theme Toggle */}
             
 

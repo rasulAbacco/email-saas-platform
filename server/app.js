@@ -1,4 +1,7 @@
 // server/app.js
+const emailVerifyRoutes = require ('./routes/emailVerifyRoutes.js');
+require ('./jobs/index.js');
+
 
 const express = require('express');
 const cors = require('cors');
@@ -36,8 +39,15 @@ app.use('/api/analytics', analyticsRoutes);
 app.use('/api/auth/stats', statsRoutes); // ✅ mount stats
 // app.use('/api/campaigns', require('./routes/campaignRoutes'));
 
+// Add this line
+app.use('/api', emailVerifyRoutes);
 
 app.use('/api/test', testRoutes);
+
+app.use(cors({
+  origin: 'http://localhost:3000',
+  credentials: true
+}));
 
 // Health check
 app.get('/api/health', (req, res) => {

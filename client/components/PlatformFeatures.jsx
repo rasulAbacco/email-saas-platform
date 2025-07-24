@@ -25,7 +25,7 @@ const features = [
 
 const PlatformFeatures = () => {
     return (
-        <section className={styles.platformFeatures}>
+        <section className={`${styles.platformFeatures} max-w-[100rem] mx-auto` }>
             <span className={`dark:text-[#00FF9C] ${styles.tag}`}>Platform Features</span>
             <h2 className={`text-black dark:text-white`}>Everything you need to succeed</h2>
             <p className={`${styles.subtitle} dark:text-[#CDF5FD]`}>

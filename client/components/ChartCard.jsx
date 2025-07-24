@@ -2,7 +2,7 @@ import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContai
 
 export default function ChartCard({ title, data, dataKeys }) {
     return (
-        <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow w-full">
+        <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow w-full max-w-[100rem] mx-auto">
             <h2 className="text-xl font-semibold mb-4">{title}</h2>
             <div className="w-full h-64">
                 <ResponsiveContainer width="100%" height="100%">
