@@ -1,0 +1,368 @@
+.app-container {
+    padding: 0px;
+    display: flex;
+    gap: 1rem;
+}
+
+.export-statistics-btn,
+.add-email-btn {
+    background-color: rgb(127 39 255);
+    padding: 10px 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+
+    padding: 20px;
+    border-radius: 8px;
+    width: 600px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.email-modal h2 {
+    margin-bottom: 20px;
+}
+
+.period-select {
+    width: 100%;
+    padding: 8px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.email-option {
+    margin: 10px 0;
+}
+
+.modal-buttons {
+    display: flex;
+    justify-content: space-between;
+}
+
+.cancel-btn,
+.export-btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.cancel-btn {
+    background-color: #ccc;
+}
+
+.cancel-btn:hover {
+    background-color: #bbb;
+}
+
+.export-btn {
+    background-color: #6f42c1;
+    color: white;
+}
+
+.export-btn:hover {
+    background-color: #5a34a2;
+}
+
+.email-icons-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.email-icon {
+    text-align: center;
+}
+
+.email-icon img {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+}
+
+.modal-buttons {
+    display: flex;
+    justify-content: center;
+}
+
+.cancel-btn {
+    background-color: #ccc;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.cancel-btn:hover {
+    background-color: #bbb;
+}
+
+.app-container {
+    padding: 20px;
+}
+
+
+.export-statistics-btn,
+.add-email-btn {
+    background-color: rgb(127 39 255);
+    padding: 10px 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+
+.search-filter-container {
+    display: flex;
+    margin-left: 30%;
+    justify-content: right;
+}
+
+.search-input {
+    padding: 10px;
+    margin-right: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.filters-btn {
+    padding: 10px;
+
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+
+.modal-overlay1 {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.692);
+    display: flex;
+    justify-content: right;
+    align-items: right;
+
+}
+
+.modal-content {
+
+    margin-top: 150px;
+    padding: 20px;
+    border-radius: 8px;
+    width: 550px;
+    box-shadow: 0 4px 8px rgba(66, 66, 66, 0.2);
+
+}
+
+.input-field {
+    width: 100%;
+    padding: 8px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+
+}
+
+.modal-buttons {
+    display: flex;
+    justify-content: space-between;
+}
+
+.cancel-btn,
+.apply-btn,
+.export-btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.cancel-btn {
+    background-color: #ccc;
+}
+
+.cancel-btn:hover {
+    background-color: #bbb;
+}
+
+.apply-btn {
+    background-color: #6f42c1;
+    color: white;
+}
+
+.apply-btn:hover {
+    background-color: #5a34a2;
+}
+
+.export-btn {
+    background-color: #6f42c1;
+    color: white;
+}
+
+.export-btn:hover {
+    background-color: #5a34a2;
+}
+
+.email-icons-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.email-icon {
+    text-align: center;
+    border: 1px solid rgba(206, 203, 203, 0.514);
+    padding: 25px;
+}
+
+.email-icon img {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+}
+
+/* ==================== */
+.campaigns-container {
+    display: flex;
+}
+
+.campaigns-sidebar {
+    width: 250px;
+    box-shadow: 0 4px 6px rgba(51, 50, 50, 0.308);
+    padding: 20px;
+    height: 600px;
+
+}
+
+.campaigns-folder-list {
+    list-style-type: none;
+    padding: 0;
+
+}
+
+.campaigns-folder-item {
+    cursor: pointer;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    transition: background-color 0.3s ease;
+}
+
+.campaigns-folder-item:hover {
+    background-color: #03081427;
+}
+
+/* General Styles for the Table */
+
+.campaigns-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+}
+
+/* Table Header Styling */
+.campaigns-table-header {
+    background-color: #f8f9fa;
+
+}
+
+.campaigns-table-header-item {
+    padding: 12px 17px;
+    text-align: left;
+    font-weight: bold;
+    font-size: 14px;
+
+    border-bottom: 2px solid #dee2e6;
+    padding-left: 50px;
+}
+
+/* Table Row Styling */
+.campaigns-table-row {
+    background-color: #ffffff;
+    transition: background-color 0.3s ease;
+
+}
+
+/* Hover effect for table rows */
+.campaigns-table-row:hover {
+    background-color: #f1f1f1;
+}
+
+/* Table Data Styling */
+.campaigns-table-item {
+    padding: 12px 15px;
+    text-align: left;
+    font-size: 14px;
+    color: #495057;
+    border-bottom: 1px solid #dee2e6;
+    padding-left: 80px;
+}
+
+/* Specific Styling for Status (Draft or other) */
+.campaigns-status-draft {
+    color: #ffb300;
+    font-weight: bold;
+}
+
+.campaigns-status-sent {
+    color: #28a745;
+    font-weight: bold;
+}
+
+.campaigns-status-pending {
+    color: #ffc107;
+    font-weight: bold;
+}
+
+.campaigns-status-failed {
+    color: #dc3545;
+    font-weight: bold;
+}
+
+/* For responsiveness - Table scroll on small screens */
+@media (max-width: 768px) {
+    .campaigns-table {
+        width: 100%;
+        overflow-x: auto;
+        display: block;
+    }
+
+    .campaigns-table-header-item,
+    .campaigns-table-item {
+        font-size: 12px;
+        padding: 8px 10px;
+    }
+
+    .campaigns-table-header {
+        font-size: 12px;
+    }
+
+    .campaigns-table-row {
+        font-size: 12px;
+    }
+}

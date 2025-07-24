@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import {
     LayoutDashboard,
+    MailCheck,
     Mail,
     Zap,
     Users,
@@ -11,10 +12,12 @@ import {
     Settings,
     HelpCircle
 } from 'lucide-react';
+import { FaShareFromSquare } from "react-icons/fa6";
 
 const navLinks = [
     { name: 'Dashboard', path: '/dashboard', icon: LayoutDashboard },
-    { name: 'Campaigns', path: '/dashboard/campaigns', icon: Mail },
+    { name: 'Mail Verifier', path: '/dashboard/mailVerify', icon: MailCheck },
+    { name: 'Campaigns', path: '/dashboard/campaigns', icon: FaShareFromSquare },
     { name: 'Automations', path: '/dashboard/automations', icon: Zap },
     { name: 'CRM', path: '/dashboard/crm', icon: Users },
     { name: 'Forms', path: '/dashboard/forms', icon: FileText },

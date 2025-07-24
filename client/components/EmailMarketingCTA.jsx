@@ -13,7 +13,7 @@ const EmailMarketingCTA = () => {
         : "bg-gray-50 text-gray-900";
 
     return (
-        <div className={`min-h-screen transition-colors duration-300 bg-[#F5EFFF] dark:bg-[#0f044d] ${themeClasses}`}>
+        <div className={`max-w-[100rem] mx-auto transition-colors duration-300 bg-[#F5EFFF] dark:bg-[#0f044d] ${themeClasses}`}>
             {/* Theme Toggle */}
 
 

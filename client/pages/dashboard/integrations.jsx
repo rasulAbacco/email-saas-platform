@@ -54,8 +54,8 @@ export default function IntegrationsPage() {
 
     return (
         <DashboardLayout>
-            <Head><title>Integrations - EmailAI Pro</title></Head>
-            <div className="p-6 text-black dark:text-white">
+            <Head ><title>Integrations - EmailAI Pro</title></Head>
+            <div className="p-6 mt-[5%] text-black dark:text-white">
                 <h1 className="text-2xl font-bold mb-2">🔌 Integrations</h1>
                 <p className="text-gray-600 dark:text-gray-300 mb-6">
                     Manage and connect third-party services to automate and enhance your email marketing.

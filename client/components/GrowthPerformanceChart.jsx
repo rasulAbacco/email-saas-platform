@@ -52,7 +52,7 @@ const GrowthPerformanceChart = () => {
 
     const CustomLegend = ({ payload }) => {
         return (
-            <div className="flex justify-center gap-8 mt-4">
+            <div className="flex justify-center gap-8 mt-4 max-w-[100rem] mx-auto">
                 {payload.map((entry, index) => (
                     <div key={index} className="flex items-center gap-2">
                         <div
@@ -78,7 +78,7 @@ const GrowthPerformanceChart = () => {
         : "bg-white border-gray-200";
 
     return (
-        <div className={`min-h-screen transition-colors duration-300 dark:bg-[#180759] ${themeClasses}`}>
+        <div className={`max-w-[100rem] mx-auto transition-colors duration-300 dark:bg-[#180759] ${themeClasses}`}>
             {/* Theme Toggle */}
             
 
@@ -95,7 +95,7 @@ const GrowthPerformanceChart = () => {
                 </div>
 
                 {/* Chart Container */}
-                <div className={`p-8 rounded-2xl border transition-all duration-300 ${cardClasses}shadow-lg hover:shadow-xl dark:bg-[#0f044d]`}>
+                <div className={`p-8 rounded-2xl border w-full transition-all duration-300 ${cardClasses}shadow-lg hover:shadow-xl dark:bg-[#0f044d]`}>
                     <div className="h-96 w-full">
                         <ResponsiveContainer width="100%" height="100%">
                             <LineChart
