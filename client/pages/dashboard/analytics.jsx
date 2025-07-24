@@ -363,8 +363,4 @@ const analytics = () => {
   );
 };
 
-<<<<<<< HEAD
 export default analytics;
-=======
-export default analytics;
->>>>>>> 98266f6587edc9ae55df78cffb33333fe6160fec

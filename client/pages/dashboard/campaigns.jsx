@@ -7,15 +7,9 @@ import Notifications from "@/components/campaigns/Notifications";
 import NewCampaigns from "@/components/campaigns/NewCampaigns";
 import Reports from "@/components/campaigns/Reports";
 import Schedules from "@/components/campaigns/Schedules";
-import Templetes from "@/components/campaigns/Templetes";
-import AllCampaigns from "@/components/campaigns/AllCampaigns";
-// Import your components
-// import AllCampaigns from "./AllCampaigns";
-// import NewCampaign from "./NewCampaign";
-// import Reports from "./Reports";
-// import Templates from "./Templates";
-// import Schedules from "./Schedules";
-// import Notifications from "./Notifications";
+import Templetes from "/components/campaigns/Templetes";
+import AllCampaigns from "/components/campaigns/AllCampaigns";
+
 
 const navigation = [
   { name: "All Campaigns", id: "all-campaigns" },
@@ -30,13 +24,13 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
 
-export default function CampaignsPage() {
+export default function Campaigns() {
   const [activeTab, setActiveTab] = useState("all-campaigns");
 
   const renderContent = () => {
     switch (activeTab) {
     case "all-campaigns":
-        return <AllCampaigns />;
+        return  <AllCampaigns/>
       case "new-campaigns":
         return <NewCampaigns />;
       case "reports":
@@ -47,32 +41,31 @@ export default function CampaignsPage() {
         return <Schedules />;
       case "notifications":
         return <Notifications />;
-      default:
-        return <div>Select a tab to view content</div>;
+       
     }
   };
 
   return (
     <DashboardLayout>
-      <Head>
+      <Head className="mt-[5%] ">
         <title>Campaigns - EmailAI Pro</title>
       </Head>
 
       {/* Navigation */}
-      <Disclosure as="nav" className="bg-white text-black dark:bg-gray-900 dark:text-white shadow">
-        <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
+      <Disclosure as="nav" className="bg-white text-black dark:bg-gray-900 dark:text-white shadow mt-5 pt-5 w-full"  >
+        <div className="max-w-7xl mx-auto sm:px-6 lg:px-8 pt-5 mt-5">
           <div className="relative flex h-16 items-center justify-between">
             {/* Mobile menu button */}
-            <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
-              <DisclosureButton className="relative inline-flex items-center justify-center rounded-md p-2 text-gray-500 hover:bg-gray-200 dark:hover:bg-gray-700 hover:text-black dark:hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
+            <div className="absolute inset-y-0 flex items-center sm:hidden">
+              <DisclosureButton className="relative inline-flex items-center justify-center rounded-md   text-gray-500 hover:bg-gray-200 dark:hover:bg-gray-700 hover:text-black dark:hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
                 <span className="sr-only">Open main menu</span>
                 <Bars3Icon className="block h-6 w-6" aria-hidden="true" />
                 <XMarkIcon className="hidden h-6 w-6" aria-hidden="true" />
               </DisclosureButton>
             </div>
 
-            {/* Logo + Tabs */}
-            <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start pl-[200px]">
+            {/* Logo + Tabs */} 
+            <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start" >
               <div className="hidden sm:ml-6 sm:block">
                 <div className="flex space-x-4">
                   {navigation.map((item) => (
@@ -125,7 +118,7 @@ export default function CampaignsPage() {
                           "block px-4 py-2 text-sm text-gray-700 dark:text-gray-200"
                         )}
                       >
-                        Your Profile
+                        Your Profile 
                       </a>
                     )}
                   </MenuItem>
@@ -181,13 +174,16 @@ export default function CampaignsPage() {
             ))}
           </div>
         </DisclosurePanel>
+        <div className="mt-4" style={{width:"100%"}}>{renderContent()}
+      </div>
+      
       </Disclosure>
 
       {/* Main Content Area */}
-      <div className="mt-4 px-4">{renderContent()}
-         
-      </div>
+      
        
     </DashboardLayout>
   );
 }
+ 
+ 

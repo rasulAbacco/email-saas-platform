@@ -2,7 +2,6 @@
   padding: 0px;
   display: flex;
   gap: 1rem;
-  
 }
 .export-statistics-btn,
 .add-email-btn {
@@ -12,8 +11,6 @@
   border-radius: 5px;
   cursor: pointer;
 }
-
- 
 
 .modal-overlay {
   position: fixed;

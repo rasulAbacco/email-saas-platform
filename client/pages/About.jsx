@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { Mail, Shield, Zap, Users, CheckCircle, Star, Globe, Clock, TrendingUp, Award } from 'lucide-react'
 import Navbar from '@/components/Navbar'
 import styles from "../styles/about.module.css"
+import SocialmediaIcons from './SocialmediaIcons'
 const About = () => {
     const [isDarkMode, setIsDarkMode] = useState(false)
 
@@ -258,6 +259,7 @@ const About = () => {
                     </div>
                 </div>
             </div>
+            <SocialmediaIcons/>
         </div>
     )
 }

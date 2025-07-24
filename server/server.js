@@ -1,5 +1,3 @@
-// server/server.js
-
 const app = require('./app');
 const startJobs = require('./jobs');
 require('dotenv').config();

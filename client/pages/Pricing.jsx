@@ -5,6 +5,8 @@ import { MdCreditCard, MdAlternateEmail, MdOutlineReport, MdSecurity, MdAccessTi
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { FaGift, FaPercent, FaQuestion, FaMoneyBillWave, FaReceipt, FaInfinity } from 'react-icons/fa';
+import SocialmediaIcons from './SocialmediaIcons';
+ ;
 
 function Pricing() {
     const [selectedAmount, setSelectedAmount] = useState(5000);
@@ -39,6 +41,8 @@ function Pricing() {
                 label: 'Flexible billing options',
             },
         ];
+
+       
 
     return (
         <div> 
@@ -235,8 +239,39 @@ function Pricing() {
                 </div>
             </section>
 
+            <section className="py-16 bg-gray-100 dark:bg-gray-800">
+                <div className="max-w-4xl mx-auto px-4">
+                    <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-900 dark:text-white mb-4">
+                        We're with you every step of the way
+                    </h2>
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+                        <div className="bg-white dark:bg-gray-800 rounded-lg p-6 w-200 shadow">
+                            <img src="https://snov.io/images/pages/pricing/with-you-avatar1.png" alt="" />
+                            <h3 className="text-xl font-semibold mb-2 dark:text-white">Personal implementation manager</h3>
+                            <p className="text-gray-600 dark:text-gray-300">
+                                Don't know where to start? An implementation manager will help set up your account faster according to your specific goals and obstacles.
+                            </p>
+                        </div>
+                        <div className="bg-white dark:bg-gray-800 rounded-lg p-6 shadow">
+                            <img src="https://snov.io/images/pages/pricing/with-you-avatar2.png" alt="" />
+                            <h3 className="text-xl font-semibold mb-2 dark:text-white">Award-winning support</h3>
+                            <p className="text-gray-600 dark:text-gray-300">
+                                Questions, suggestions, troubleshooting — our customer care team is always here to help you get the answers faster.
+                            </p>
+                        </div>
+                        <div className="bg-white dark:bg-gray-800 rounded-lg p-6 shadow">
+                            <img src="https://snov.io/images/pages/pricing/with-you-avatar3.png" alt="" />
+                            <h3 className="text-xl font-semibold mb-2 dark:text-white">Extensive help center</h3>
+                            <p className="text-gray-600 dark:text-gray-300">
+                                Step-by-step tool guides, expert insights, beginner-friendly glossary and a big template library are here to help you get started easier.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
             <Footer/>
+            <SocialmediaIcons/>
         </div>
     );
 }
